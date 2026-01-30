@@ -17,10 +17,10 @@ scene.add(light);
 light.position.set(1, 1, 1);
 
 let textureLoader = new THREE.TextureLoader();
-let texture = textureLoader.load("./public/earth8k.jpg");
+let texture = textureLoader.load("https://www.solarsystemscope.com/textures/download/8k_earth_daymap.jpg");
 texture.colorSpace = THREE.SRGBColorSpace;
 
-let texture2 = textureLoader.load("./public/clouds.jpg");
+let texture2 = textureLoader.load("https://www.solarsystemscope.com/textures/download/8k_earth_clouds.jpg");
 texture2.colorSpace = THREE.SRGBColorSpace;
 
 camera.position.z = 2;
