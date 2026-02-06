@@ -14,7 +14,7 @@ const camera = new THREE.PerspectiveCamera(
 
 camera.position.z = 2;
 
-const ambientlight = new THREE.AmbientLight("white", 1.2);
+const ambientLight = new THREE.AmbientLight("white", 1.2);
 scene.add(ambientLight);
 
 
