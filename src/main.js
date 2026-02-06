@@ -23,7 +23,7 @@ const textureLoader = new THREE.TextureLoader();
 const texture = textureLoader.load("/earth8k.jpg");
 texture.colorSpace = THREE.SRGBColorSpace;
 
-const texture2 = textureLoader.load("/clouds4k.jpg");
+const texture2 = textureLoader.load("/clouds.jpg");
 texture2.colorSpace = THREE.SRGBColorSpace;
 
 const geometry = new THREE.SphereGeometry(1, 250, 250);
