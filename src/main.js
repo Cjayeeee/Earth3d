@@ -14,14 +14,14 @@ const camera = new THREE.PerspectiveCamera(
 
 camera.position.z = 2;
 
-const light = new THREE.AmbientLight("white", 1.2);
+const ambientlight = new THREE.AmbientLight("white", 1.2);
 scene.add(ambientLight);
 
 
 
 
 //light.position.set(1, 1, 1);
-scene.add(light);
+//scene.add(light);
 
 const textureLoader = new THREE.TextureLoader();
 
