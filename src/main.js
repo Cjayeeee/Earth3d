@@ -1,7 +1,7 @@
 import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { RGBELoader } from "three/addons/loaders/RGBELoader.js";
+import { HDRLoader } from "three/examples/jsm/loaders/HDRLoader.js";
 
 const scene = new THREE.Scene();
 
@@ -49,14 +49,28 @@ const mesh2 = new THREE.Mesh(geometry2, material2);
 scene.add(mesh);
 scene.add(mesh2);
 
-const hdri = new RGBELoader();
-hdri.load(
+// const hdri = new RGBELoader();
+// hdri.load(
+//   "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/flamingo_pan_2k.hdr",
+//   (hdritext) => {
+//     hdritext.mapping = THREE.EquirectangularReflectionMapping;
+//     scene.environment = hdritext;
+//   }
+// );
+
+const rgbeLoader = new HDRLoader();
+rgbeLoader.load(
   "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/flamingo_pan_2k.hdr",
-  (hdritext) => {
-    hdritext.mapping = THREE.EquirectangularReflectionMapping;
-    scene.environment = hdritext;
+  function (texture) {
+    texture.mapping = THREE.EquirectangularReflectionMapping;
+    scene.environment = texture;
+    // scene.background = texture;
   }
 );
+
+
+
+
 
 const canvas = document.querySelector("canvas");
 
